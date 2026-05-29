@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>PyTorch Autograd Graph</title>
+  <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+    mermaid.initialize({ startOnLoad: true, theme: "neutral" });
+  </script>
+  <style>
+    body {
+      margin: 0;
+      padding: 24px;
+      font-family: Segoe UI, Arial, sans-serif;
+      background: #f8fafc;
+      color: #111827;
+    }
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 24px;
+      margin: 0 0 8px;
+    }
+    p {
+      margin: 0 0 20px;
+      color: #4b5563;
+    }
+    .mermaid {
+      padding: 20px;
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      overflow: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>PyTorch Autograd Graph</h1>
+    <p>Arrows point from the final loss backward to the operations used to compute gradients.</p>
+    <pre class="mermaid">
+flowchart LR
+  n3019044140032["NllLossBackward0"]
+  n3019005687600["LogSoftmaxBackward0"]
+  n3018317429440["AddmmBackward0"]
+  n3018317428240["AccumulateGrad"]
+  n3018317424448["TanhBackward0"]
+  n3018317427184["AccumulateGrad"]
+  n3018317427328["AccumulateGrad"]
+  n3018317428048["AccumulateGrad"]
+  n3018317429488["TBackward0"]
+  n3018317429632["AccumulateGrad"]
+  n3018317427232["TBackward0"]
+  n3019044140032 --> n3019005687600
+  n3019005687600 --> n3018317429440
+  n3018317429440 --> n3018317428240
+  n3018317429440 --> n3018317424448
+  n3018317424448 --> n3018317427184
+  n3018317427184 --> n3018317427328
+  n3018317427184 --> n3018317428048
+  n3018317427184 --> n3018317429488
+  n3018317429488 --> n3018317429632
+  n3018317429440 --> n3018317427232
+  n3018317427232 --> n3018317427184
+    </pre>
+  </div>
+</body>
+</html>

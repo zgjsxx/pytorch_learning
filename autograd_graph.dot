@@ -1,0 +1,28 @@
+digraph AutogradGraph {
+  rankdir="LR";
+  graph [fontname="Consolas"];
+  node [shape=box, style="rounded,filled", fillcolor="#f5f7fb", fontname="Consolas", color="#6b7280"];
+  edge [color="#6b7280"];
+  n3019044140032 [label="NllLossBackward0"];
+  n3019005687600 [label="LogSoftmaxBackward0"];
+  n3018317429440 [label="AddmmBackward0"];
+  n3018317428240 [label="AccumulateGrad"];
+  n3018317424448 [label="TanhBackward0"];
+  n3018317427184 [label="AccumulateGrad"];
+  n3018317427328 [label="AccumulateGrad"];
+  n3018317428048 [label="AccumulateGrad"];
+  n3018317429488 [label="TBackward0"];
+  n3018317429632 [label="AccumulateGrad"];
+  n3018317427232 [label="TBackward0"];
+  n3019044140032 -> n3019005687600;
+  n3019005687600 -> n3018317429440;
+  n3018317429440 -> n3018317428240;
+  n3018317429440 -> n3018317424448;
+  n3018317424448 -> n3018317427184;
+  n3018317427184 -> n3018317427328;
+  n3018317427184 -> n3018317428048;
+  n3018317427184 -> n3018317429488;
+  n3018317429488 -> n3018317429632;
+  n3018317429440 -> n3018317427232;
+  n3018317427232 -> n3018317427184;
+}
